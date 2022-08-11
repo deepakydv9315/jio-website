@@ -1,0 +1,56 @@
+// import fonts 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+// impot files 
+@import "./scss/colors";
+@import "./scss/reset";
+
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+// pre classes 
+@mixin contain($tb){
+    padding: $tb 20px;
+}
+
+@mixin flex($dir , $justify:center){
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+    flex-direction: $dir;
+}
+
+// ++++++++++++++++++++
+//     header starts 
+// ++++++++++++++++++++
+
+header{
+    width: 100%;
+    margin: 0px;
+    background-color: $primaryBlue;
+}
+nav{
+    @include flex(row,space-between );
+    
+    // padding: 10px 0px;
+    @include contain(10px);
+
+    .logo{
+        @include flex(row,center);
+        gap: 0px 5px;
+
+        .ham i{
+            color: $light;
+            font-size: 25px;
+            border: 1px solid yellow;
+        }
+        .logo-img img {
+            width: 40px;
+        }
+    }
+    
+}
+
